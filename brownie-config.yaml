@@ -1,0 +1,28 @@
+dependencies:
+  # - <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@0.5.1
+compiler:
+  solc:
+    version: '0.8.17'
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.5.1'
+dotenv: .env
+networks:
+  goerli:
+    eth_usd_price_feed: '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e'
+    verify: True
+  # add fork by running the following in terminal: --> Infura Fork
+  #... 'brownie networks add development mainnet-fork-dev cmd=ganache-cli host={URL in ganache} fork='https://mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID' accounts=10 mnemonic={input} port={input}'
+  #... single quote around fork URL means run as-is, env variable doesn't get actualized so can use different ones
+  # add fork from alchemy website, fun following in terminal:
+  #... 'brownie networks add development mainnet-fork-dev cmd=ganache-cli host={URL in ganache} fork={alchemy_proj_HTTPS_key} accounts=10 mnemonic={input} port={input}'
+  mainnet-fork-dev:
+  # changed address to the mainnet ETH/USD from chainlink docs
+    eth_usd_price_feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    verify: False
+  development:
+    verify: False
+  ganache-local:
+    verify: False
+wallets:
+  from_key: ${PRIVATE_KEY}
