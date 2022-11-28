@@ -1,0 +1,11 @@
+# respository should include '.env' file with the following variables
+
+
+export PRIVATE_KEY=
+# now call 'API Key' on Infura
+# can see list of networks for infura by typing in 'brownie networks list' after inputting below
+# pick network: by running script and adding at the end '--network {network}'
+export WEB3_INFURA_PROJECT_ID=
+# brownie will pick up the 'ETHERSCAN_TOKEN' name automatically and use it
+#...when 'publish_source=True'
+export ETHERSCAN_TOKEN=
